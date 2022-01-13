@@ -1,0 +1,31 @@
+<br>
+<br>
+
+<div class="row">
+    <div class="col-4 offset-2">
+       <button *ngIf="note1!=''" (click)="changevalue(note1,'note1')" class="btn btn-primary btn-block shadow" >{{note1}}</button> &nbsp;&nbsp;&nbsp;&nbsp;
+    </div> 
+    <div class="col-4">
+     <button *ngIf="note2!=''"  (click)="changevalue(note2,'note2')" class="btn btn-success btn-block shadow">{{note2}}</button> 
+    </div>
+</div>
+
+<br>
+
+<div class="row">
+    <div class="col-4 offset-2">
+        <button *ngIf="note3!=''"  (click)="changevalue(note3,'note3')" class="btn btn-secondary btn-block shadow">{{note3}}</button>&nbsp;&nbsp;&nbsp;&nbsp;
+    </div> 
+    <div class="col-4">
+       <button *ngIf="note4!=''" (click)="changevalue(note4,'note4')"  class="btn btn-warning btn-block shadow">{{note4}}</button>
+    </div> 
+</div>
+
+<br>
+
+<app-note-edit  [selectednote]="selectednote" [varname]="varname" 
+(childEvent)="loadNewName($event.notename,$event.varname)"
+(deleteEvent)="deleteName($event.notename,$event.varname)">
+</app-note-edit>
+
+<br>
